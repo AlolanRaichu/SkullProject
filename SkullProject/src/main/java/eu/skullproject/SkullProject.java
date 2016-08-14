@@ -47,6 +47,7 @@ public class SkullProject
         MinecraftForge.EVENT_BUS.register(new ServerDetector());
     // Register Commands //  
         ClientCommandHandler.instance.registerCommand(new Test());
+        ClientCommandHandler.instance.registerCommand(new AFKCommand());
     }    
     
 //================ INSTANCE ================ //
