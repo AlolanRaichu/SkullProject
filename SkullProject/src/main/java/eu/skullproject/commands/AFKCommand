@@ -21,14 +21,14 @@ public class SampleCommand extends CommandBase {
 	if (args.length > 0){
 		//Checks what the user enters after /afk
 		if(args[0].equalsIgnoreCase("cancel"))  {
-				ChatListener.isAFK = false;
+				ChatMSG.isAFK = false;
 				icommandsender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_AQUA + "You are no longer AFK!"));}
 		
 		
-		else if (ChatListener.isAFK == false) {
-		    ChatListener.isAFK = true;
+		else if (ChatMSG.isAFK == false) {
+		    ChatMSG.isAFK = true;
 		    icommandsender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_AQUA + "You are now AFK!"));
-		    ChatListener.reason = Joiner.on(" ").join(args);
+		    ChatMSG.reason = Joiner.on(" ").join(args);
 		    
 	    }
 	}
