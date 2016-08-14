@@ -31,7 +31,7 @@ public class SkullProject
          *  CODE
          */	
         } catch(Exception e) {
-            this.logWarn("[" + Source.mod_Name + "] error found during preInit.");
+            this.logWarn("error found during preInit.");
             e.printStackTrace();
         }
     }
