@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ChatMSG {
     public static boolean isAFK = false;
-    public static String reason = "";
+	public static String reason = "";
     
     @SubscribeEvent
     public void onChatMSG(ClientChatReceivedEvent e) {
