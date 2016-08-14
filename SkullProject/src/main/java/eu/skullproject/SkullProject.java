@@ -27,7 +27,9 @@ public class SkullProject
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         try {
-            this.LOGGER = LogManager.getLogger("Barra");
+        /*
+         *  CODE
+         */	
         } catch(Exception e) {
             this.logWarn("[" + Source.mod_Name + "] error found during preInit.");
             e.printStackTrace();
@@ -63,15 +65,15 @@ public class SkullProject
     }
 
     public void logInfo(String abc) {
-    this.LOGGER.info(abc);
+    this.LOGGER.info(Source.logTag + abc);
     }
 
     public void logWarn(String abc) {
-        this.LOGGER.warn(abc);
+        this.LOGGER.warn(Source.logTag + abc);
     }
 
     public void logError(String abc) {
-        this.LOGGER.error(abc);
+        this.LOGGER.error(Source.logTag + abc);
     }
     
 //================ END ================ //
