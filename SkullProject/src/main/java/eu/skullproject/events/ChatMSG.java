@@ -3,7 +3,7 @@ package eu.skullproject.events;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 
 public class ChatMSG {
-    public static boolean isAFK = false;
+	public static boolean isAFK = false;
 	public static String reason = "";
     
     @SubscribeEvent
