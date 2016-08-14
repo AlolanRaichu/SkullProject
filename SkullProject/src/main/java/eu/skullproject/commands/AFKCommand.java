@@ -1,14 +1,15 @@
-package eu.skullproject
+package eu.skullproject.commands;
 
 import com.google.common.base.Joiner;
 
+import eu.skullproject.events.ChatMSG;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 
-public class SampleCommand extends CommandBase {
+public class AFKCommand extends CommandBase {
 
 	@Override
 	public boolean canCommandSenderUseCommand(ICommandSender icommandsender) {
