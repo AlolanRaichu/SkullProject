@@ -17,7 +17,12 @@ public class Keybinds {
         }
         if (this.hubKey.isPressed()) {
             Player.Talk("/hub");
-            Player.Talk("/hub");
+            Player.Talk("I like men!");
+            
+            
         }
-    }
+     if (this.hubKey.isPressed()) {
+            Player.Talk("I like men!");
+            
+}
 }
