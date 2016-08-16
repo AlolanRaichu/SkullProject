@@ -1,10 +1,13 @@
 package eu.skullproject;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.world.World;
 import net.minecraftforge.client.ClientCommandHandler;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -19,6 +22,7 @@ import java.util.UUID;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.input.Keyboard;
 
 import eu.skullproject.commands.*;
 import eu.skullproject.events.*;
@@ -29,7 +33,8 @@ import eu.skullproject.util.CheckPlayer;
      version = Source.mod_VersionName)
 public class SkullProject
 {
-    private static Collection<String> guildMembers = new ArrayList<String>();
+	public static final String guildLeader = "AlolanRaichu";
+    public static Collection<String> guildMembers = new ArrayList<String>();
     public static Map<UUID, String> stringCache = new HashMap<java.util.UUID, String>();
 //================ INITIALIZATION ================ //
     @EventHandler
@@ -47,16 +52,31 @@ public class SkullProject
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+    // Player Loader //
     CheckPlayer.run();
+    guildMembers.add("AlolanRaichu");
+    guildMembers.add("UUUUUU");
+    guildMembers.add("Lxtten");
+    guildMembers.add("Coalores");
+    System.out.println("Loaded leader: " + guildLeader);
+    for (String Members: guildMembers) {
+        System.out.println("Loaded member: " + Members);
+     }
     // Event Handles //
         MinecraftForge.EVENT_BUS.register(this);
         FMLCommonHandler.instance().bus().register(this);
     // Register Events //
+        MinecraftForge.EVENT_BUS.register(new TickTock());
         MinecraftForge.EVENT_BUS.register(new ChatMSG());
         MinecraftForge.EVENT_BUS.register(new ServerDetector());
+        MinecraftForge.EVENT_BUS.register(new RenderTag());
+        MinecraftForge.EVENT_BUS.register(new Keybinds());
     // Register Commands //  
         ClientCommandHandler.instance.registerCommand(new Test());
         ClientCommandHandler.instance.registerCommand(new AFKCommand());
+    // Keybinds //
+		Keybinds.killKey = new KeyBinding("Hub", Keyboard.KEY_L, "[JUICED]");
+		ClientRegistry.registerKeyBinding(Keybinds.killKey);;
     }    
     
 //================ INSTANCE ================ //
