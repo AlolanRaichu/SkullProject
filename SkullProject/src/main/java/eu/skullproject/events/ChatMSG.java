@@ -20,5 +20,8 @@ public class ChatMSG {
 		if (message.endsWith("joined the guild!")) {
 			Player.Talk("/gchat " + Randomizer.runWelcome());
 		}
+		if (message.contains("SLIME")) {
+			Player.Talk("/kill");
+		}
     }
 }

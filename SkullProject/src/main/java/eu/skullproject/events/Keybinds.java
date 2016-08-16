@@ -8,16 +8,16 @@ import net.minecraftforge.fml.common.gameevent.InputEvent;
 public class Keybinds {
     public static String PP_KEY_CAT = "Pixel+ Keys";
     public static KeyBinding killKey;
-    public static KeyBinding hubKey
+    public static KeyBinding hubKey;
     
     @SubscribeEvent
     public void keyPress(InputEvent.KeyInputEvent e) {
         if(this.killKey.isPressed()) {
             Player.Talk("/kill");
         }
-        else if (this.hubKey.isPressed()) {
-            Player.Talk("/hub")
-            Player.Talk("/hub")
+        if (this.hubKey.isPressed()) {
+            Player.Talk("/hub");
+            Player.Talk("/hub");
         }
     }
 }

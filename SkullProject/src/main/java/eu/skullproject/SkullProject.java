@@ -57,7 +57,9 @@ public class SkullProject
     guildMembers.add("AlolanRaichu");
     guildMembers.add("UUUUUU");
     guildMembers.add("Lxtten");
-    guildMembers.add("Coalores");
+    guildMembers.add("CoalOres");
+    guildMembers.add("Simbae");
+    guildMembers.add("ShimkyBabexox");
     System.out.println("Loaded leader: " + guildLeader);
     for (String Members: guildMembers) {
         System.out.println("Loaded member: " + Members);
@@ -76,7 +78,9 @@ public class SkullProject
         ClientCommandHandler.instance.registerCommand(new AFKCommand());
     // Keybinds //
 		Keybinds.killKey = new KeyBinding("/kill", Keyboard.KEY_K, "Team Skull");
-		ClientRegistry.registerKeyBinding(Keybinds.killKey);;
+		Keybinds.hubKey = new KeyBinding("/hub", Keyboard.KEY_H, "Team Skull");
+		ClientRegistry.registerKeyBinding(Keybinds.killKey);
+		ClientRegistry.registerKeyBinding(Keybinds.hubKey);
     }    
     
 //================ INSTANCE ================ //
