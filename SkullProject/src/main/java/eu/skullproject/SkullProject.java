@@ -75,7 +75,7 @@ public class SkullProject
         ClientCommandHandler.instance.registerCommand(new Test());
         ClientCommandHandler.instance.registerCommand(new AFKCommand());
     // Keybinds //
-		Keybinds.killKey = new KeyBinding("Hub", Keyboard.KEY_L, "[JUICED]");
+		Keybinds.killKey = new KeyBinding("/kill", Keyboard.KEY_K, "Team Skull");
 		ClientRegistry.registerKeyBinding(Keybinds.killKey);;
     }    
     
