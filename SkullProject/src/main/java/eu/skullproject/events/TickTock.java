@@ -38,7 +38,7 @@ public class TickTock {
                         if (isMaster) {
                             displayMessage = "" + EnumChatFormatting.WHITE + "[SKULL LEADER]";
                         } else {
-                            displayMessage = "" + EnumChatFormatting.WHITE + "" + EnumChatFormatting.BOLD "[SKULL MEMBER]";
+                            displayMessage = "" + EnumChatFormatting.WHITE + "" + EnumChatFormatting.BOLD + "[SKULL MEMBER]";
                         }
                         SkullProject.stringCache.put(entityPlayer.getUniqueID(), displayMessage);
                     }
