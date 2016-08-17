@@ -1,6 +1,7 @@
 package eu.skullproject;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderPlayer;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.world.World;
 import net.minecraftforge.client.ClientCommandHandler;
@@ -12,6 +13,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,6 +29,7 @@ import org.lwjgl.input.Keyboard;
 import com.mojang.realmsclient.dto.PlayerInfo;
 
 import eu.skullproject.commands.*;
+import eu.skullproject.cosmetics.LayerCape;
 import eu.skullproject.events.*;
 import eu.skullproject.util.CheckPlayer;
 
@@ -87,6 +90,15 @@ public class SkullProject
 		ClientRegistry.registerKeyBinding(Keybinds.killKey);
 		ClientRegistry.registerKeyBinding(Keybinds.hubKey);
     }    
+    
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+      for (RenderPlayer render : Minecraft.getMinecraft().getRenderManager().getSkinMap().values())
+      {
+          render.addLayer(new LayerCape(render));
+      }
+    }
     
 //================ INSTANCE ================ //
     private static SkullProject instance;

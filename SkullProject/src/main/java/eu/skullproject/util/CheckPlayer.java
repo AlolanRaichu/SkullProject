@@ -14,7 +14,7 @@ public class CheckPlayer {
     UUID = minecraft.getSession().getProfile().getId();
     String stringUUID = UUID.toString();
     if(!Source.memberUUIDs.contains(stringUUID)){
-    	Minecraft.getMinecraft().shutdown();
+  //  	Minecraft.getMinecraft().shutdown();
     }
   }
 }

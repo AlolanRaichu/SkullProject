@@ -19,4 +19,5 @@ public class Keybinds {
             Player.Talk("/hub");
             Player.Talk("/hub");
         }
+   }
 }
