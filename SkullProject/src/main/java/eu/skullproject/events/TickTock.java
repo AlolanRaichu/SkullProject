@@ -36,7 +36,7 @@ public class TickTock {
                         if (name.equals(SkullProject.guildLeader)) isMaster = true;
                         String displayMessage;
                         if (isMaster) {
-                            displayMessage = "" + EnumChatFormatting.WHITE + "[SKULL LEADER]";
+                            displayMessage = "" + EnumChatFormatting.WHITE + "" + EnumChatFormatting.BOLD + "[SKULL LEADER]";
                         } else {
                             displayMessage = "" + EnumChatFormatting.WHITE + "" + EnumChatFormatting.BOLD + "[SKULL MEMBER]";
                         }

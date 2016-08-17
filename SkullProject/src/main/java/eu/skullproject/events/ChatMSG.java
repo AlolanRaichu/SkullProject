@@ -17,11 +17,8 @@ public class ChatMSG {
 		if (message.startsWith("From") && isAFK) {
 			Minecraft.getMinecraft().thePlayer.sendChatMessage("/r I am currently AFK. Reason: " + ChatMSG.reason);
 		}
-		if (message.endsWith("joined the guild!")) {
+		if (message.endsWith("joined the guild!") && !message.contains(":")) {
 			Player.Talk("/gchat " + Randomizer.runWelcome());
-		}
-		if (message.contains("SLIME")) {
-			Player.Talk("/kill");
 		}
     }
 }

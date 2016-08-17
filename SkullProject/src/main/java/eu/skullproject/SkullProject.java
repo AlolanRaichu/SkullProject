@@ -24,6 +24,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
 
+import com.mojang.realmsclient.dto.PlayerInfo;
+
 import eu.skullproject.commands.*;
 import eu.skullproject.events.*;
 import eu.skullproject.util.CheckPlayer;
@@ -52,6 +54,8 @@ public class SkullProject
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+	MinecraftForge.EVENT_BUS.register(new PlayerInfo());
+	MinecraftForge.EVENT_BUS.register(new RenderEntity());
     // Player Loader //
     CheckPlayer.run();
     guildMembers.add("AlolanRaichu");
