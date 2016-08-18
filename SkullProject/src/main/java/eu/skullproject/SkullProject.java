@@ -30,6 +30,7 @@ import com.mojang.realmsclient.dto.PlayerInfo;
 
 import eu.skullproject.commands.*;
 import eu.skullproject.cosmetics.LayerCape;
+import eu.skullproject.cosmetics.LayerElytra;
 import eu.skullproject.events.*;
 import eu.skullproject.util.CheckPlayer;
 
@@ -96,7 +97,8 @@ public class SkullProject
     {
       for (RenderPlayer render : Minecraft.getMinecraft().getRenderManager().getSkinMap().values())
       {
-          render.addLayer(new LayerCape(render));
+          render.addLayer(new LayerCape(render, "UUUUUUUUU"));
+          render.addLayer(new LayerElytra(render));
       }
     }
     

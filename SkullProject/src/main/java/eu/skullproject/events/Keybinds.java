@@ -17,7 +17,6 @@ public class Keybinds {
         }
         if (this.hubKey.isPressed()) {
             Player.Talk("/hub");
-            Player.Talk("/hub");
         }
    }
 }
