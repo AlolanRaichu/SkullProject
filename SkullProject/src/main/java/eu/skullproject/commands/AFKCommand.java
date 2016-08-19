@@ -18,7 +18,6 @@ public class AFKCommand extends CommandBase {
 	}	
 	@Override
 	public void processCommand(ICommandSender icommandsender, String[] args) throws CommandException {
-
 	if (args.length > 0){
 		//Checks what the user enters after /afk
 		if(args[0].equalsIgnoreCase("cancel"))  {

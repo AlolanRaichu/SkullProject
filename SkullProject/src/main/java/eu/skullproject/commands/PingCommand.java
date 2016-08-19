@@ -3,6 +3,8 @@ package eu.skullproject.commands;
 
 
 import eu.skullproject.util.PlayerPing;
+
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -23,15 +25,15 @@ public class PingCommand extends CommandBase {
 		return "ping";
 		
 	}
-
+	
 	@Override
 	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 		// TODO Auto-generated method stub
 		String x = PlayerPing.getPingInformation();
 		sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BOLD + x));
 	}
-		
-	@Override
+	
+   @Override
     public boolean canCommandSenderUseCommand(ICommandSender sender) {
         return true;
     }

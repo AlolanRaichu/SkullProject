@@ -3,6 +3,7 @@ package eu.skullproject.cosmetics;
 
 import org.apache.commons.io.FilenameUtils;
 
+import eu.skullproject.SkullProject;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderPlayer;
@@ -17,20 +18,22 @@ import net.minecraft.util.MathHelper;
 public class LayerCape implements LayerRenderer<AbstractClientPlayer>
 {
     private final RenderPlayer playerRenderer;
-    private final String username;
     private ResourceLocation locationcape;
 
-    public LayerCape(RenderPlayer playerRendererIn, String username)
+    public LayerCape(RenderPlayer playerRendererIn)
     {
         this.playerRenderer = playerRendererIn;
-        this.username = username;
         this.locationcape = new ResourceLocation("capes/TeamSkull.png");
     }
     
     public void doRenderLayer(AbstractClientPlayer entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
     {
-        if (entitylivingbaseIn.getName().equals("AlolanRaichu") || entitylivingbaseIn.getName().equals("ShimkyBabexox") || entitylivingbaseIn.getName().equals("UUUUU/UUUU") || entitylivingbaseIn.getName().equals("Lxtten") || entitylivingbaseIn.getName().equals("CoalOres") && entitylivingbaseIn.hasPlayerInfo() && !entitylivingbaseIn.isInvisible() && entitylivingbaseIn.isWearing(EnumPlayerModelParts.CAPE) && locationcape != null)
+    	// Is cape toggled? //
+    	if(SkullProject.cape){
+    		//Reads playername ect. //
+        if (entitylivingbaseIn.getName().equals("AlolanRaichu") || entitylivingbaseIn.getName().equals("Lxtten") || entitylivingbaseIn.getName().equals("UUUUUUUUU") || entitylivingbaseIn.getName().equals("CoalOres") && entitylivingbaseIn.hasPlayerInfo() && !entitylivingbaseIn.isInvisible() && entitylivingbaseIn.isWearing(EnumPlayerModelParts.CAPE) && locationcape != null)  	
         {
+        	// Rendering //
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                 this.playerRenderer.bindTexture(locationcape);                GlStateManager.pushMatrix();
                 GlStateManager.translate(0.0F, 0.0F, 0.125F);
@@ -72,6 +75,7 @@ public class LayerCape implements LayerRenderer<AbstractClientPlayer>
                 GlStateManager.popMatrix();
             }
         }
+    }
 
     public boolean shouldCombineTextures()
     {

@@ -1,6 +1,7 @@
 package eu.skullproject;
 
 import net.minecraft.client.Minecraft;
+
 import net.minecraft.client.renderer.entity.RenderPlayer;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.world.World;
@@ -30,7 +31,6 @@ import com.mojang.realmsclient.dto.PlayerInfo;
 
 import eu.skullproject.commands.*;
 import eu.skullproject.cosmetics.LayerCape;
-import eu.skullproject.cosmetics.LayerElytra;
 import eu.skullproject.events.*;
 import eu.skullproject.util.CheckPlayer;
 
@@ -42,6 +42,7 @@ public class SkullProject
 	public static final String guildLeader = "AlolanRaichu";
     public static Collection<String> guildMembers = new ArrayList<String>();
     public static Map<UUID, String> stringCache = new HashMap<java.util.UUID, String>();
+	public static boolean cape = true;
 //================ INITIALIZATION ================ //
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -58,10 +59,8 @@ public class SkullProject
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-	MinecraftForge.EVENT_BUS.register(new PlayerInfo());
-	MinecraftForge.EVENT_BUS.register(new RenderEntity());
     // Player Loader //
-    CheckPlayer.run();
+//    CheckPlayer.run();
     guildMembers.add("AlolanRaichu");
     guildMembers.add("UUUUUU");
     guildMembers.add("Lxtten");
@@ -82,14 +81,13 @@ public class SkullProject
         MinecraftForge.EVENT_BUS.register(new RenderTag());
         MinecraftForge.EVENT_BUS.register(new Keybinds());
     // Register Commands //  
-        ClientCommandHandler.instance.registerCommand(new Test());
+        ClientCommandHandler.instance.registerCommand(new ToggleCape());
         ClientCommandHandler.instance.registerCommand(new AFKCommand());
         ClientCommandHandler.instance.registerCommand(new PingCommand());
+        ClientCommandHandler.instance.registerCommand(new SkywarsJoin());
     // Keybinds //
 		Keybinds.killKey = new KeyBinding("/kill", Keyboard.KEY_K, "Team Skull");
-		Keybinds.hubKey = new KeyBinding("/hub", Keyboard.KEY_H, "Team Skull");
 		ClientRegistry.registerKeyBinding(Keybinds.killKey);
-		ClientRegistry.registerKeyBinding(Keybinds.hubKey);
     }    
     
     @EventHandler
@@ -97,8 +95,7 @@ public class SkullProject
     {
       for (RenderPlayer render : Minecraft.getMinecraft().getRenderManager().getSkinMap().values())
       {
-          render.addLayer(new LayerCape(render, "UUUUUUUUU"));
-          render.addLayer(new LayerElytra(render));
+          render.addLayer(new LayerCape(render));
       }
     }
     
