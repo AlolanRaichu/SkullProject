@@ -37,7 +37,8 @@ public class SkywarsJoin extends CommandBase {
 	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 		int value = (int)(Math.random() * 6 + 1);
 		while (true) {
-			Minecraft.getMinecraft().thePlayer.sendChatMessage("I LIKE MEN!" + value );	
+			Minecraft.getMinecraft().thePlayer.sendChatMessage("I LIKE MEN!" + value );
+			Thread.sleep(500);
 		}
 		if (ServerDetector.onHypixel){
             if (args[0].equalsIgnoreCase("solo")) {
