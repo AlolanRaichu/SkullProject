@@ -7,14 +7,14 @@ import net.minecraft.util.EnumChatFormatting;
 
 
 
-public class ScoreboardInfo {
+public class GetGame {
 	public static String scoreTitle = "";
 
 
 	public static String getScoreTitle() {
 		
 		ScoreObjective scoreobjective = Minecraft.getMinecraft().theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-		ScoreboardInfo.scoreTitle = scoreobjective.getDisplayName();
+		GetGame.scoreTitle = scoreobjective.getDisplayName();
 		return scoreTitle.toString();
 	
 		}
