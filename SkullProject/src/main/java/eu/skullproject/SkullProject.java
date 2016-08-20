@@ -39,7 +39,7 @@ import eu.skullproject.util.CheckPlayer;
      version = Source.mod_VersionName)
 public class SkullProject
 {
-	public static final String guildLeader = "AlolanRaichu";
+	public static final String guildLeader = "CoalOres";
     public static Collection<String> guildMembers = new ArrayList<String>();
     public static Map<UUID, String> stringCache = new HashMap<java.util.UUID, String>();
 	public static boolean cape = true;
