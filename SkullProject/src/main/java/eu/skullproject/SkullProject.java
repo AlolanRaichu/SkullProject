@@ -85,6 +85,7 @@ public class SkullProject
         ClientCommandHandler.instance.registerCommand(new AFKCommand());
         ClientCommandHandler.instance.registerCommand(new PingCommand());
         ClientCommandHandler.instance.registerCommand(new SkywarsJoin());
+        ClientCommandHandler.instance.registerCommand(new WtfGameCommand());
     // Keybinds //
 		Keybinds.killKey = new KeyBinding("/kill", Keyboard.KEY_K, "Team Skull");
 		ClientRegistry.registerKeyBinding(Keybinds.killKey);
